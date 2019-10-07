@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js example</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="p5.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="p5.sound.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+    <body>
+        PROJET ENTIRE WORLD GRAPHIC
+        <script> 
+       var xy = 400;
+       var yy = 400;
+       var targetXy = 400;
+       var targetYy = 400;
+            
+       var xr = 400;
+       var yr = 400;
+       var targetXr = 400;
+       var targetYr = 400;
+        
+       var xo = 400;
+       var yo = 400;
+       var targetXo = 400;
+       var targetYo = 400;
+
+       var xg = 400;
+       var yg = 400;
+       var targetXg = 400;
+       var targetYg = 400;
+
+       var xb = 400;
+       var yb = 400;
+       var targetXb = 400;
+       var targetYb = 400;
+
+       var xp = 400;
+       var yp = 400;
+       var targetXp = 400;
+       var targetYp = 400;
+
+
+            
+       var easing = 0.04;
+
+function setup() {
+  createCanvas(800, 800);
+    background(0);
+}
+
+function draw() {
+        background(0);
+    
+            xr += (targetXr - xr) * easing;
+            yr += (targetYr - yr) * easing; 
+    
+            xo += (targetXo - xo) * easing;
+            yo += (targetYo - yo) * easing; 
+    
+            xy += (targetXy - xy) * easing;
+            yy += (targetYy - yy) * easing; 
+
+            xg += (targetXg - xg) * easing;
+            yg += (targetYg - yg) * easing; 
+
+            xb += (targetXb - xb) * easing;
+            yb += (targetYb - yb) * easing; 
+
+            xp += (targetXp - xp) * easing;
+            yp += (targetYp - yp) * easing; 
+
+
+    
+    
+    fill("red");
+    ellipse(xr, yr, 200); // above
+    
+    fill("orange");
+    ellipse(xo, yo, 200); // up right
+    
+    fill("yellow");
+    ellipse(xy, yy, 200);
+    
+    fill("green");
+    ellipse(xg, yg, 200); // below
+    
+    
+    fill("blue");
+    ellipse(xb, yb, 200); // down left
+    
+    fill("purple");
+    ellipse(xp, yp, 200); // up left
+    
+    fill(255);
+    ellipse(400, 400, 200); // middle 
+    
+    noFill();
+    // FOR LINES
+    
+    ellipse(487.5, 450, 10); // with down right
+    
+    ellipse(487.5, 350, 10); //with up right
+    
+    ellipse(312.5, 450, 10); //with down left
+    
+    ellipse(312.5, 350, 10); //with up left
+    
+    ellipse(400, 300, 10); // with above
+    
+    ellipse(400, 500, 10); //with below
+    
+    // LINES
+    
+    line(400, 400, 400, 500); // towards Below
+    line(400, 400, 400, 300); //towards above
+    line(400, 400, 487.5, 450); // towards down right
+    line(400, 400, 487.5, 350); // towards up right
+    
+    line(400, 400, 312.5, 450); // towards down left
+    
+    line(400, 400, 312.5, 350); //towards up left
+    
+    //FOR VERTEXES 
+    // same order as LINES
+    ellipse(400, 450, 12); 
+    ellipse(400, 350, 12); 
+    ellipse(443.75, 425, 12); // DOWN RIGHT
+    ellipse(443.75, 375, 12);
+    ellipse(356.25, 425, 12);
+    ellipse(356.25, 375, 12);
+    
+    //PETALS 
+    
+    // "Above" petal 
+    fill("red");
+    beginShape();
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    curveVertex(406.25, 350);
+    curveVertex(400, 300);
+    curveVertex(393.75, 350);
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    endShape();
+    
+    // Below petal  
+    fill("green");
+    beginShape();
+        curveVertex(400, 400);
+    curveVertex(400, 400);
+    curveVertex(406.25, 450);
+    curveVertex(400, 500);
+    curveVertex(393.75, 450);
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    endShape();
+    
+    // down Right petal // when doing them on diagonal we want a diferent àf 4.5 to the center of each circle
+    fill("yellow");
+    beginShape();
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    curveVertex(448.25, 420.5);
+    curveVertex(487.5, 450);
+    curveVertex(439.25, 429.5);
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    endShape();
+    
+    // up right petal
+    fill("orange");
+    beginShape();
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    curveVertex(439.25, 370.5);
+    curveVertex(487.5, 350);
+    curveVertex(448.25, 379.5);
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    endShape();
+
+    //down left petal
+    fill("blue");
+    beginShape();
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    curveVertex(360.75, 429.5);
+    curveVertex(312.5, 450);
+    curveVertex(351.75, 420.5);
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    endShape();
+
+    //up left petal
+    fill("purple");
+    beginShape();
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    curveVertex(360.75, 370.5);
+    curveVertex(312.5, 350);
+    curveVertex(351.75, 379.5);
+    curveVertex(400, 400);
+    curveVertex(400, 400);
+    endShape();
+    
+ //FOR VERTEXES 
+    // same order as LINES
+    fill(255);
+    ellipse(400, 450, 12); 
+    ellipse(400, 350, 12); 
+    ellipse(443.75, 425, 12); 
+    ellipse(443.75, 375, 12); 
+    ellipse(356.25, 425, 12); 
+    ellipse(356.25, 375, 12); // UP LEFT
+    
+       if (keyIsPressed == true) {            
+        
+        // yellow circle appears   
+        targetXy = 575;
+        targetYy = 500;
+
+        //blue appears
+        targetXb = 225;
+        targetYb = 500;
+           
+        // red appears
+        targetXr = 400;
+        targetYr = 200;
+        
+        // green appears 
+        targetXg = 400;
+        targetYg = 600;
+
+        // purple appears 
+        targetXp = 225;
+        targetYp = 300;
+           
+        // orange appears
+        targetXo = 575;
+        targetYo = 300;
+           
+       }
+    
+    if (mouseIsPressed == true) {
+        // yellow circle disappears   
+        targetXy = 400;
+        targetYy = 400;
+        //blue disappears
+        targetXb = 400;
+        targetYb = 400;
+        // red disappears
+        targetXr = 400;
+        targetYr = 400;
+        // green disappears 
+        targetXg = 400;
+        targetYg = 400;
+        // purple disappears 
+        targetXp = 400;
+        targetYp = 400;
+        // orange disappears
+        targetXo = 400;
+        targetYo = 400;
+    }
+
+}
+            
+            // IMPORTANT NOTE TO MYSELF : so I don't have to copy and paste too much I might want to create function that use the draw function !
+        </script>
+    </body>
+</html>
